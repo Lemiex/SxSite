@@ -1,5 +1,5 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import React, { StrictMode } from 'react';
+import ReactDOM, { createRoot } from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
 import './styles.css';
 import App from './App';
@@ -9,7 +9,7 @@ import Sustainability from './Pages/Sustainability';
 import { Routes, Route, Link } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
+const root = ReactDOM.createRoot(rootElement);
 root.render(
   <StrictMode>
     <BrowserRouter>

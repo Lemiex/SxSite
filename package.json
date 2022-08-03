@@ -2,6 +2,7 @@
   "name": "home-page",
   "version": "1.0.0",
   "description": "Scene exported with Spline",
+  "type": "module",
   "keywords": [
     "react",
     "spline",
@@ -14,14 +15,15 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^4.0.0"
+    "react-scripts": "^4.0.0",
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
     "typescript": "4.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
