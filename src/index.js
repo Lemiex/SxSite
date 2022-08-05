@@ -2,7 +2,7 @@ import React, { StrictMode } from 'react';
 import ReactDOM, { createRoot } from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
 import './styles.css';
-import App from './App';
+import App from './App1';
 import MachineIntelligence from './Pages/MachineIntelligence';
 import Experiences from './Pages/Experiences';
 import Sustainability from './Pages/Sustainability';
