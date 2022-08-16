@@ -16,7 +16,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="machine" element={<MachineIntelligence />} />
-          <Route path="experience" element={<Experiences />} />
+          <Route path="experiences" element={<Experiences />} />
           <Route path="sustainability" element={<Sustainability />} />
         </Route>
       </Routes>
