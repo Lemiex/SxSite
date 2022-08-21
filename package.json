@@ -11,7 +11,7 @@
   "main": "src/index.js",
   "dependencies": {
     "@splinetool/react-spline": "^2.2.1",
-    "@splinetool/runtime": "^0.9.90",
+    "@splinetool/runtime": "^0.9.100",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-loading": "^2.0.3",

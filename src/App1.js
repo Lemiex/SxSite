@@ -2,23 +2,26 @@ import Spline from '@splinetool/react-spline';
 import Sustainability from './Pages/Sustainability';
 import MachineIntelligence from './Pages/MachineIntelligence';
 import Experiences from './Pages/Experiences';
+import Home from './Pages/Home';
 import Loading from './Loading'
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Suspense } from 'react';
 
 export default function App() {
     const [loading, setLoading] = useState(false);
     const [route, setRoute] = useState('home')
+
 
     useEffect(() => {
         setLoading(true)
         setTimeout(() => setLoading(false), 5000)
     }, [])
 
-    const machinePuzzle = useRef();
-    function onLoad(spline) {
-        const objMachine = spline.findObjectById('bf62adaa-cccc-4765-bbf2-ea9291ee11be')
-        machinePuzzle.current = objMachine;
-    }
+    // const machinePuzzle = useRef();
+    // function onLoad(spline) {
+    //     const objMachine = spline.findObjectById('bf62adaa-cccc-4765-bbf2-ea9291ee11be')
+    //     machinePuzzle.current = objMachine;
+    // }
+    console.log(route)
 
     function onMouseDown(e) {
         if (e.target.name === 'Machine') {
@@ -34,38 +37,19 @@ export default function App() {
             setRoute('projects')
         }
     }
+    return (
+        <>
+            {
+                route === 'home' ?
 
-    if (loading === false) {
-        if (route === 'home') {
-            return (
-                <Spline scene="https://prod.spline.design/CZ9FJkxZ6rqLQU2k/scene.splinecode"
-                    onLoad={onLoad}
-                    onMouseDown={onMouseDown} />
-            )
-        }
-        else if (route === 'machine') {
-            return (
-                <MachineIntelligence route={route} />
-            )
-        }
-        else if (route === 'sustainability') {
-            return (
-                <Sustainability />
-            )
-        }
-        else if (route === 'experiences') {
-            return (
-                <Experiences />
-            )
-        }
-        else if (route === 'projects') {
-            return <></>
-        }
-    }
-    else {
-        return (
-            <Loading />
-        )
-    }
+                    <Spline scene="https://prod.spline.design/CZ9FJkxZ6rqLQU2k/scene.splinecode" onMouseDown={onMouseDown} />
 
+                    : route === 'machine' ? <MachineIntelligence route={route} />
+                        : route === 'sustainability' ? <Sustainability />
+                            : route === 'experiences' ? <Experiences />
+                                : null
+
+            }
+        </>
+    )
 }

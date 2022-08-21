@@ -14,11 +14,10 @@ root.render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="machine" element={<MachineIntelligence />} />
+        <Route path="/" element={<App />} />
+        {/* <Route path="machine" element={<MachineIntelligence />} />
           <Route path="experiences" element={<Experiences />} />
-          <Route path="sustainability" element={<Sustainability />} />
-        </Route>
+          <Route path="sustainability" element={<Sustainability />} /> */}
       </Routes>
     </BrowserRouter>
   </StrictMode>
